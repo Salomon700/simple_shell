@@ -26,6 +26,7 @@ void execute_command(char *command)
 		else if (pid == 0)
 		{
 			char **argv = malloc(2 * sizeof(char *));
+
 			if (argv == NULL)
 			{
 				perror("malloc");
@@ -33,7 +34,6 @@ void execute_command(char *command)
 			}
 			argv[0] = command;
 			argv[1] = NULL;
-				
 			if (execve(command, argv, NULL) == -1)
 			{
 				perror("execve");
