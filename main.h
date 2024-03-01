@@ -14,5 +14,7 @@ void handle_fork_error(void);
 pid_t get_process_id(void);
 pid_t get_parent_process_id(void);
 void wait_for_child(void);
+char **tokenize_command(char *command_line, int *argc);
+void free_argv(char **argv, int argc);
 
 #endif
