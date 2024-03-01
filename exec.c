@@ -10,9 +10,12 @@
 
 void execute_command(char *command)
 {
+	char command_path[256];
+	snprintf(command_path, sizeof(command_path), "./%s", command);
+
 	if (access(command, X_OK) != 0)
 	{
-		fprintf(stderr, "%s: No such file or directory\n", command);
+		fprintf(stderr, "%s: No such file or directory\n", command_path);
 	}
 	else
 	{
